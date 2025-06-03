@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="title">
-    <h1>Ágazati Cheatsheet</h1>
+    <h1>Cisco & Python segéd oldal</h1>
   </div>
   <br>
 
@@ -70,6 +70,15 @@ with open("vasarlasok.txt", "r", encoding="utf-8") as f:
           </pre>
         </div>
         <br>
+        <h2>Fáljba írás</h2>
+        <p>A \n azért kell hogy ne ugyan abba a sorba írjon legközelebb</p>
+        <div class="mt-2 bg-dark p-3 rounded border">
+          <pre>
+with open("Fájlnév.txt", "w", encoding="utf-8") as f:
+  f.write(f'blablablabla\n')
+          </pre>
+        </div>
+        <br>
         <h2>Sor olvasás</h2>
         <div class="mt-2 bg-dark p-3 rounded border">
           <pre>
@@ -81,12 +90,33 @@ with open("vasarlasok.txt", "r", encoding="utf-8") as f:
         <h2>Nevek & Számok elválaszátsa</h2>
         <div class="mt-2 bg-dark p-3 rounded border">
           <pre>
+nevek = []
+osszegek = []
+
 for sor in sorok:
     sor = sor.strip()
     if sor:
-        nev, osszeg_str = sor.split(";")
+        nev, osszeg = sor.split(";")
         nevek.append(nev)
         osszegek.append(int(osszeg_str))
+          </pre>
+        </div>
+        <br>
+        <h2>def függvények használata</h2>
+        <p>A def az egy függvény amit késöbb letudunk hívni</p>
+        <div class="mt-2 bg-dark p-3 rounded border">
+          <pre>
+def nev():
+  nev = "Ádám"
+  return nev
+
+print(f'A nevem {nev()}')
+          </pre>
+        </div>
+        <p>A "return" a függvény végén azt az adatot fogja vissza adni lehívás kor amit utána írtunk<br>Ami ebben a helyzet ben így nézki:</p>
+        <div class="mt-2 bg-dark p-3 rounded border">
+          <pre>
+A nevem Ádám
           </pre>
         </div>
         <br>
@@ -99,6 +129,7 @@ def legnagyobb_vasarlo(nevek, osszegek):
     return nevek[index]
           </pre>
         </div>
+        <br>
       </div>
       </details>
   </details>
